@@ -34,6 +34,7 @@ img{
 
 .item {
     height: 100%;
+    display: none;
 }
 
 .item img{
@@ -63,4 +64,12 @@ img{
 
 .up-slide{
     top: 10px;
+}
+
+.active{
+    display: block;
+}
+
+.hidden{
+    display: none;
 }
