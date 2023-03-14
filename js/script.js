@@ -20,25 +20,43 @@ itemArray[itemArrayIndex].classList.add('active')
 // implementiamo la freccia in alto 
 const upbtn = document.querySelector('.up-slide')
 upbtn.addEventListener('click', function() {
-    // togliere active da quello corrente
-    itemArray[itemArrayIndex].classList.remove('active')
 
-    // incremento l'index
-    itemArrayIndex++;
 
-    // aggiungere active a quello successivo
-    itemArray[itemArrayIndex].classList.add('active')
+    if (itemArrayIndex < imgArray.length - 1){
+        // togliere active da quello corrente
+        itemArray[itemArrayIndex].classList.remove('active')
+    
+        // incremento l'index
+        itemArrayIndex++;
+    
+        // aggiungere active a quello successivo
+        itemArray[itemArrayIndex].classList.add('active')
+    } else {
+        itemArray[(itemArrayIndex)].classList.remove('active')
+        itemArrayIndex = 0
+        // aggiungere active a quello successivo
+        itemArray[itemArrayIndex].classList.add('active')   
+    }
 
 })
 
+// implementiamo la freccia in basso
 const dwnbtn = document.querySelector('.down-slide');
 dwnbtn.addEventListener('click', function(){
-       // togliere active da quello corrente
-       itemArray[itemArrayIndex].classList.remove('active')
 
-       // decremento l'index
-       itemArrayIndex--;
-   
-       // aggiungere active a quello precedente
-       itemArray[itemArrayIndex].classList.add('active')
+    if(itemArrayIndex > 0 ){
+        // togliere active da quello corrente
+        itemArray[itemArrayIndex].classList.remove('active')
+ 
+        // decremento l'index
+        itemArrayIndex--;
+    
+        // aggiungere active a quello precedente
+        itemArray[itemArrayIndex].classList.add('active')
+    } else {
+        itemArray[(itemArrayIndex)].classList.remove('active')
+        itemArrayIndex = imgArray.length - 1
+        // aggiungere active a quello successivo
+        itemArray[itemArrayIndex].classList.add('active')  
+    }
 })
